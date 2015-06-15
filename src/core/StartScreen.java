@@ -1,28 +1,17 @@
 package core;
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 
-public class StartScreen implements Screen {
-	private BufferedReader screen_content;
-	
-	public StartScreen() {
-		try {
-			screen_content = new BufferedReader(new FileReader("start-screen.txt"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} 
+public class StartScreen extends Screen {
+
+	public StartScreen(String filename, EventMediator m) throws FileNotFoundException {
+		super(filename, m);
 	}
 
 	@Override
-	public void advise() {
-		// TODO Auto-generated method stub
+	public void act() {
+		super.draw();
+		super.mediator.advise(this);
 	}
 
-	@Override
-	public void draw() throws IOException {
-		// TODO Auto-generated method stub
-	}
 }

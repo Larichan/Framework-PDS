@@ -1,4 +1,5 @@
 package core;
+
 public interface Rule extends Colleague {
 	public void add();
 

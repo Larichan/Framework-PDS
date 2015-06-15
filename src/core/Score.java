@@ -1,4 +1,5 @@
 package core;
+
 public interface Score {
 	public void decreasePoints();
 

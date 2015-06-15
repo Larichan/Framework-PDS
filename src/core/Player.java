@@ -1,4 +1,5 @@
 package core;
+
 public interface Player {
 	public void setPlayer();
 

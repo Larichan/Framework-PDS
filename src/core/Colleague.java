@@ -1,4 +1,7 @@
 package core;
+
 public interface Colleague {
-	public void advise();
+
+	public void act();
+
 }
