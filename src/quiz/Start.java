@@ -3,6 +3,7 @@ package quiz;
 import java.io.IOException;
 import java.util.Scanner;
 
+import core.Command;
 import core.EventMediator;
 import core.Screen;
 
@@ -16,9 +17,8 @@ public class Start {
 		// Screen options_screen = factory.createScreen(3, "options-screen.txt",
 		// m);
 		Screen quiz_screen = factory.createScreen(4, "quiz-questions.txt", m);
+		Command answerCommand = new AnswerCommand(quiz_screen, m);
 
 		start_screen.act();
-		Scanner input = new Scanner(System.in);
-		input.close();
 	}
 }

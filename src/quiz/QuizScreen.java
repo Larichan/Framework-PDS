@@ -42,6 +42,6 @@ public class QuizScreen extends Screen {
 		}
 
 		actualLine = lineNumber;
-		System.out.println(line);
+		System.out.print(line);
 	}
 }

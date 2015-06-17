@@ -21,13 +21,17 @@ public class MainEventMediator implements EventMediator {
 
 	@Override
 	public void commandReceived(Command c) {
-		// TODO Auto-generated method stub
+		if (c instanceof AnswerCommand) {
+			answerCommandNotification();
+		}
 	}
 
 	@Override
 	public void screenDrawed(Screen s) {
 		if (s instanceof StartScreen) {
 			startScreenNotification();
+		} else if (s instanceof QuizScreen) {
+			quizScreenNotification();
 		}
 	}
 
@@ -41,6 +45,22 @@ public class MainEventMediator implements EventMediator {
 		COLLEAGUES.add(c);
 	}
 
+	public void answerCommandNotification() {
+		for (Colleague c : COLLEAGUES) {
+			if (c instanceof Rule) {
+				c.act();
+			}
+		}
+	}
+
+	public void quizScreenNotification() {
+		for (Colleague c : COLLEAGUES) {
+			if (c instanceof Command) {
+				c.act();
+			}
+		}
+	}
+
 	public void startScreenNotification() {
 		for (Colleague c : COLLEAGUES) {
 			if (c instanceof QuizScreen) {
@@ -48,4 +68,5 @@ public class MainEventMediator implements EventMediator {
 			}
 		}
 	}
+
 }

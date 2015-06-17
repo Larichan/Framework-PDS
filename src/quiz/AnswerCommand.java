@@ -4,14 +4,16 @@ import java.util.Scanner;
 
 import core.Command;
 import core.EventMediator;
+import core.Screen;
 
 public class AnswerCommand extends Command {
 
 	private int response;
-	private QuizScreen quiz_screen;
+	private Screen quiz_screen;
 
-	public AnswerCommand(QuizScreen q, EventMediator m) {
+	public AnswerCommand(Screen q, EventMediator m) {
 		super(m);
+		super.mediator.register(this);
 		quiz_screen = q;
 	}
 
