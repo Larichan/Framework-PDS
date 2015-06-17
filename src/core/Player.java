@@ -1,7 +1,15 @@
 package core;
 
-public interface Player {
-	public void setPlayer();
+public abstract class Player {
 
-	public void updatePlayer();
+	protected final String name;
+	protected final Score score;
+
+	public Player(String name, Score score) {
+		this.name = name;
+		this.score = score;
+	}
+
+	public void updatePlayer() {};
+
 }

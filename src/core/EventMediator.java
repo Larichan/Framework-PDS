@@ -2,9 +2,11 @@ package core;
 
 public interface EventMediator {
 
-	public void advise(Colleague c);
-
-	public void fireTrigger();
+	public void screenDrawed(Screen s);
+	
+	public void inputReceived(String c);
+	
+	public void ruleChecked(Rule r, boolean b);
 
 	public void register(Colleague c);
 
