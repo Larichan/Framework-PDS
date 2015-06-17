@@ -1,11 +1,16 @@
-package core;
+package quiz;
 
 import java.io.FileNotFoundException;
 
-import quiz.QuizScreen;
+import core.EndScreen;
+import core.EventMediator;
+import core.OptionsScreen;
+import core.Screen;
+import core.StartScreen;
 
 public class ScreenFactory {
-	public Screen createScreen(int type, String filename, EventMediator m) throws FileNotFoundException {
+	public Screen createScreen(int type, String filename, EventMediator m)
+			throws FileNotFoundException {
 		if (type == 1) {
 			return new StartScreen(filename, m);
 		} else if (type == 2) {

@@ -13,7 +13,8 @@ public class QuizScreen extends Screen {
 	private static int actualLine;
 	private static final int totalLines = 3;
 
-	public QuizScreen(String filename, EventMediator m) throws FileNotFoundException {
+	public QuizScreen(String filename, EventMediator m)
+			throws FileNotFoundException {
 		super(filename, m);
 		super.mediator.register(this);
 		actualLine = 0;
@@ -28,7 +29,7 @@ public class QuizScreen extends Screen {
 	@Override
 	public void draw() {
 		BufferedReader br = super.screen_content;
-		
+
 		Random r = new Random();
 		int lineNumber = r.nextInt(totalLines) + 1;
 		String line = null;

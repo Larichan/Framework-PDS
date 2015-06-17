@@ -1,7 +1,13 @@
 package core;
 
-public interface Colleague {
+public abstract class Colleague {
 
-	public void act();
+	protected final EventMediator mediator;
+
+	public Colleague(EventMediator m) {
+		mediator = m;
+	}
+
+	public void act() {};
 
 }

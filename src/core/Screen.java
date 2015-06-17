@@ -5,14 +5,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public abstract class Screen implements Colleague {
+public abstract class Screen extends Colleague {
 
 	protected final BufferedReader screen_content;
-	protected final EventMediator mediator;
 
-	public Screen(String filename, EventMediator m) throws FileNotFoundException {
+	public Screen(String filename, EventMediator m)
+			throws FileNotFoundException {
+		super(m);
 		screen_content = new BufferedReader(new FileReader(filename));
-		mediator = m;
 	}
 
 	public void draw() {

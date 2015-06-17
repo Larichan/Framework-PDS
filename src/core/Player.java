@@ -10,6 +10,7 @@ public abstract class Player {
 		this.score = score;
 	}
 
-	public void updatePlayer() {};
+	public void updatePlayer() {
+	};
 
 }
